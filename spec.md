@@ -4,7 +4,7 @@
 **Versão:** 3.0 (reconstrução do protótipo PHP/XAMPP, outubro de 2026)  
 **Curso:** Desenvolvimento de Sistemas, Instituto Federal de Rondônia — Campus Porto Velho Calama  
 **Repositório:** https://github.com/LarissaThauanny/LabControl  
-**Situação:** código versionado; execução PHP básica e verificações estáticas realizadas, **testes com MySQL e publicação pública ainda dependem da configuração da responsável**.
+**Situação:** código versionado no GitHub e hospedagem configurada em **https://labcontrol.xo.je/**. A responsável relatou conclusão de testes dos fluxos principais com MySQL na hospedagem; a checagem externa independente do domínio não foi possível nesta revisão.
 
 ## 1. Objetivo e problema
 
@@ -145,7 +145,7 @@ Para gerar um token seguro no computador local, com PHP instalado, execute no Po
 3. Envie os arquivos do projeto ao diretório público (`htdocs` no InfinityFree). Deixe `index.php` e `demo.php` na raiz pública. O `.env` deve ser criado apenas no servidor, usando `APP_BASE_PATH=/` se for a raiz do domínio.
 4. Configure `ADMIN_SETUP_TOKEN` privado, abra `/setup.php` no domínio para configurar o primeiro admin e, depois, remova o token e o próprio `setup.php` do diretório público. Não envie esse arquivo `.env` ao GitHub.
 5. Acesse `/demo.php` em janela anônima e teste cadastro, login, solicitação, aprovação, devolução e CSV. Confirme que `/.env`, `/sql/hosting.sql` e `/config/database.php` **não expõem conteúdo** (403 ou 404). Confira HTTPS.
-6. Link público de produção: **ainda precisa ser configurado e informado pela responsável**. O repositório GitHub sozinho não executa PHP.
+6. Link de produção configurado: **https://labcontrol.xo.je/**. A responsável confirmou que o sistema funcionou nos testes realizados; acesso e disponibilidade para terceiros devem ser checados em aba anônima antes da entrega. O repositório GitHub sozinho não executa PHP.
 
 Guia completo: `docs/PUBLICACAO.md`.
 
@@ -156,7 +156,7 @@ Guia completo: `docs/PUBLICACAO.md`.
 - **Separação de acesso:** aluno deve receber HTTP 403 ao tentar `/relatorios.php`, `/usuarios.php` e ações administrativas.
 - **Segurança:** valide `.env` bloqueado, senhas hash no banco, consultas parametrizadas, CSRF 403 em POST sem token e nenhum e-mail real na demonstração.
 - **Verificações já realizadas:** sintaxe de 17 arquivos PHP (`php -l`) e teste automático do filtro da demonstração (`node --test tests/demo-filter.test.js`). Validações HTTP da página demonstrativa podem ser repetidas em servidor local.
-- **Verificações ainda pendentes:** teste real com servidor MySQL e duas contas, teste no XAMPP por outra pessoa, publicação em um domínio, comportamento em hospedagem gratuita, inspeção adicional de segurança e acessibilidade. Nenhuma dessas etapas foi considerada aprovada sem evidência.
+- **Relato da responsável após a publicação:** banco MySQL hospedado configurado, formulário de solicitações corrigido após erro HTTP 403 e fluxo funcional nos testes realizados por ela. Esta declaração não equivale a auditoria externa. **Ainda requerem confirmação documentada:** permissões, arquivos sensíveis bloqueados, remoção de `setup.php` e do token inicial, teste em aba anônima por terceira pessoa, inspeção adicional de segurança e acessibilidade.
 - **Limitações conhecidas:** sem envio de e-mails automáticos, sem notificações em tempo real, não inclui migração automática do esquema antigo, CSV limitado aos primeiros 1.500 registros filtrados; exemplo público é somente demonstrativo.
 
 ## 11. Histórico, revisão humana e entrega

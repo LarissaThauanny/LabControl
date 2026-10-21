@@ -43,6 +43,13 @@ Este arquivo registra o que foi revisado no desenvolvimento com apoio de IA e as
 - Teste automatizado de filtro da demonstração (`node --test tests/demo-filter.test.js`) passou.
 - Não houve execução completa de MySQL no ambiente de preparação. O fluxo aluno → solicitação → aprovação → devolução → relatório precisa de teste real em XAMPP e hospedagem antes de declarar a aplicação integralmente pronta.
 
+## Publicação e correção em hospedagem PHP/MySQL — outubro de 2026
+
+- O site foi configurado pela responsável no endereço **https://labcontrol.xo.je/** com banco MySQL em hospedagem InfinityFree; ela informou que as funcionalidades testadas estavam funcionando.
+- Durante o teste de envio de solicitação, foi observado erro **HTTP 403**. A causa identificada foi a regra `Require all denied` aplicada equivocadamente à pasta `actions/`, que bloqueava os POSTs legítimos mesmo com autenticação e CSRF implementados.
+- A regra foi corrigida para `Options -Indexes` no arquivo `actions/.htaccess` e a mudança foi versionada em commit real no GitHub. A responsável confirmou que voltou a funcionar.
+- Os testes de integração com banco são **relatados pela responsável**, não reproduzidos pelo ambiente de revisão externo. A conferência final do checklist de segurança e o acesso em janela anônima continuam necessários.
+
 ## Pendências para a responsável verificar antes de entregar
 
 - Confirmar funcionamento de banco com duas contas fictícias e testes de permissão.

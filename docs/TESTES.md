@@ -7,7 +7,11 @@
 - [x] Revisão estática de consultas preparadas PDO, `password_hash`/`password_verify`, restrições por perfil e CSRF.
 - [x] Removidas credenciais fixas do protótipo PHP fornecido; o `.env` real é ignorado pelo Git.
 
-## Fluxos ainda não verificados no MySQL/hospedagem
+## Relato de testes em hospedagem (ainda não reproduzidos independentemente)
+
+A responsável informou que importou as tabelas, configurou banco MySQL e administrador em `https://labcontrol.xo.je/`, testou o sistema e confirmou funcionamento depois da correção do erro 403 no envio de solicitações. Não há evidências independentes de cada caso de teste nesta revisão. A checklist abaixo permanece como roteiro de verificação final, não como falha confirmada.
+
+## Checklist de confirmação em produção
 - [ ] Importar `sql/install.sql` em banco novo e conferir três tabelas e chaves estrangeiras.
 - [ ] Configurar primeiro administrador por `setup.php` e token privado; depois remover token e instalador no site público.
 - [ ] Cadastrar aluno fictício e confirmar senha em formato hash no banco.

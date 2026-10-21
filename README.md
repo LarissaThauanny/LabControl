@@ -38,3 +38,8 @@ Sistema educacional PHP 8.2+ e MySQL para controle de equipamentos do laboratór
 - [Checklist de entrega](docs/ENTREGA_PROFESSOR.md)
 
 **Status real:** checagem de sintaxe e teste de filtros de demonstração concluídos. Integração MySQL, publicação pública e instalação independente ainda exigem testes da responsável. GitHub não executa PHP automaticamente. Os dados de demonstração são fictícios.
+
+## Hospedagem configurada
+
+- **Endereço:** https://labcontrol.xo.je/
+- **Situação:** a responsável informou que realizou testes funcionais com MySQL na hospedagem, inclusive após correção do HTTP 403 em solicitações. Não houve validação independente da URL por esta revisão; confira em aba anônima antes da entrega.

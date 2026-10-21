@@ -15,4 +15,4 @@ O GitHub armazena o código, mas não executa PHP e MySQL. Para atender à entre
 
 **Importante:** commits no GitHub não atualizam o InfinityFree automaticamente; envie os arquivos novos manualmente para `htdocs`, sem sobrescrever o `.env` privado.
 
-**URL pública:** ainda não configurada e verificada.
+**URL pública informada pela responsável:** https://labcontrol.xo.je/. Banco e fluxos relatados como funcionais; falta verificação independente em aba anônima.
